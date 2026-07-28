@@ -1,0 +1,28 @@
+.offers-section {
+  padding: 7rem 2.5rem;
+  background: linear-gradient(135deg, var(--deep-royal), #1a2a6c);
+  color: white;
+}
+
+.offers-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.offer-card {
+  padding: 3rem 2rem;
+  border-radius: 28px;
+  text-align: center;
+}
+
+.offer-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}

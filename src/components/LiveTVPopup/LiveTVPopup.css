@@ -1,0 +1,195 @@
+/* ===========================
+   LIVE TV POPUP
+=========================== */
+
+.lvtv-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+}
+
+.lvtv-container {
+  width: 90%;
+  max-width: 780px;
+  background: #ffffff;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  animation: popupScale 0.35s ease;
+}
+
+/* Close Button */
+
+.lvtv-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #ff4d4f;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 5;
+  transition: 0.3s;
+}
+
+.lvtv-close:hover {
+  background: #d9363e;
+  transform: rotate(90deg);
+}
+
+/* Banner */
+
+.lvtv-banner {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.lvtv-banner img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.lvtv-banner:hover img {
+  transform: scale(1.05);
+}
+
+/* Play Button */
+
+.lvtv-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(220, 0, 0, 0.95);
+  color: white;
+  font-size: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 1.6s infinite;
+}
+
+/* Content */
+
+.lvtv-container h2 {
+  text-align: center;
+  margin: 24px 0 10px;
+  font-size: 32px;
+  color: #0f2d52;
+}
+
+.lvtv-container p {
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+/* Watch Button */
+
+.watch-btn {
+  display: block;
+  margin: 0 auto 30px;
+  padding: 14px 42px;
+  border: none;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #d60000, #ff2e2e);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 8px 25px rgba(214, 0, 0, 0.35);
+}
+
+.watch-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(214, 0, 0, 0.45);
+}
+
+/* Animations */
+
+@keyframes pulse {
+
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 0, 0, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 20px rgba(220, 0, 0, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 0, 0, 0);
+  }
+
+}
+
+@keyframes popupScale {
+
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+  .lvtv-banner img {
+    height: 230px;
+  }
+
+  .lvtv-play {
+    width: 65px;
+    height: 65px;
+    font-size: 28px;
+  }
+
+  .lvtv-container h2 {
+    font-size: 24px;
+  }
+
+  .watch-btn {
+    width: 85%;
+    font-size: 16px;
+  }
+
+}

@@ -1,0 +1,96 @@
+/* Floating Buttons Container */
+.fab-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 9999;
+}
+
+/* Both buttons common */
+.fab-btn-live,
+.fab-btn-news {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Live TV button */
+.fab-btn-live {
+  background: #F98513;
+  backdrop-filter: blur(4px);
+}
+
+.fab-btn-live:hover {
+  background: #e07a10;
+  transform: scale(1.08);
+}
+
+/* Read News button */
+.fab-btn-news {
+  background: rgba(30, 40, 55, 0.85);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.fab-btn-news:hover {
+  background: rgba(50, 60, 75, 0.9);
+  transform: scale(1.08);
+}
+
+/* Tooltip / Label */
+.fab-tooltip {
+  position: absolute;
+  right: 70px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: 40px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  letter-spacing: 0.5px;
+}
+
+.fab-btn-live:hover .fab-tooltip,
+.fab-btn-news:hover .fab-tooltip {
+  opacity: 1;
+  visibility: visible;
+  right: 80px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fab-container {
+    bottom: 16px;
+    right: 16px;
+    gap: 12px;
+  }
+  .fab-btn-live,
+  .fab-btn-news {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+  .fab-tooltip {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+}

@@ -1,0 +1,137 @@
+/* StatsSection.css - visible glassmorphism like .glass-card */
+
+.stats-section {
+  width: 100%;
+  padding: 5rem 2rem;
+  background: radial-gradient(circle at 20% 30%, #0a0f1a, #030712);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Glass card - exactly like .glass-card but with more visible background */
+.stat-card {
+  background: rgba(255, 255, 255, 0.2);    /* increased from 0.15 */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 0 18px 9px rgba(255, 255, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  min-width: 240px;
+  flex: 1 1 220px;
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Top gradient line */
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9), transparent);
+  pointer-events: none;
+}
+
+/* Left gradient line */
+.stat-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.8), transparent, rgba(255,255,255,0.3));
+  pointer-events: none;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Full width card for operating area */
+.stat-card.full-width {
+  flex: 1 1 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+}
+
+.stat-card.full-width .stat-value {
+  font-size: 1.6rem;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.stat-card.full-width .stat-label {
+  font-size: 1.2rem;
+  text-transform: none;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats-section {
+    padding: 3rem 1rem;
+  }
+  .stat-card {
+    padding: 1.5rem 1rem;
+    min-width: 160px;
+  }
+  .stat-value {
+    font-size: 1.8rem;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+  }
+  .stat-card.full-width {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .stat-card.full-width .stat-value {
+    font-size: 1.2rem;
+  }
+  .stat-card.full-width .stat-label {
+    font-size: 0.9rem;
+  }
+}
