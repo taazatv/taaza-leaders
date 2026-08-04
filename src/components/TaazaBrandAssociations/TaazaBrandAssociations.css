@@ -2,97 +2,75 @@
    BRAND SECTION
 =========================== */
 
-.brand-section {
-    width: 100%;
-    padding: 5rem 2rem;
-    background: radial-gradient(circle at 20% 30%, #0a0f1a, #030712);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+.brand-section{
+    width:100%;
+    padding:5rem 2rem;
+    background:radial-gradient(circle at 20% 30%,#0a0f1a,#030712);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
 }
 
-.brand-container {
-    width: 100%;
-    max-width: 1500px;
+.brand-container{
+    width:100%;
+    max-width:1500px;
 }
 
 /* ===========================
    Heading
 =========================== */
 
-.brand-title {
-    text-align: center;
-    color: #fff;
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 15px;
+.brand-title{
+    text-align:center;
+    color:#fff;
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:15px;
 }
 
-.brand-description {
-    text-align: center;
-    color: rgba(255,255,255,.8);
-    max-width: 850px;
-    margin: 0 auto 40px;
-    line-height: 1.8;
-    font-size: 1.1rem;
+.brand-description{
+    text-align:center;
+    color:rgba(255,255,255,.8);
+    max-width:850px;
+    margin:0 auto 40px;
+    line-height:1.8;
+    font-size:1.1rem;
 }
 
 /* ===========================
    Slider Wrapper
 =========================== */
 
-.slider-wrapper {
-
-    position: relative;
-
-    overflow: hidden;
-
-    border-radius: 50px;
-
-    padding: 20px 0;
-
-    background: rgba(255,255,255,.05);
-
-    backdrop-filter: blur(16px);
-
-    border: 1px solid rgba(255,255,255,.08);
-
+.slider-wrapper{
+    position:relative;
+    overflow:hidden;
+    border-radius:50px;
+    padding:20px 0;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.08);
 }
 
 .slider-wrapper::before,
 .slider-wrapper::after{
-
     content:"";
-
     position:absolute;
-
     top:0;
-
     width:120px;
-
     height:100%;
-
     z-index:10;
-
     pointer-events:none;
-
 }
 
 .slider-wrapper::before{
-
     left:0;
-
     background:linear-gradient(to right,#030712,transparent);
-
 }
 
 .slider-wrapper::after{
-
     right:0;
-
     background:linear-gradient(to left,#030712,transparent);
-
 }
 
 /* ===========================
@@ -100,23 +78,15 @@
 =========================== */
 
 .slider-track{
-
     display:flex;
-
     align-items:center;
-
     gap:28px;
-
     width:max-content;
-
     animation:scrollSlider 35s linear infinite;
-
 }
 
 .slider-wrapper:hover .slider-track{
-
     animation-play-state:paused;
-
 }
 
 /* ===========================
@@ -124,67 +94,50 @@
 =========================== */
 
 .slider-item{
-
     flex-shrink:0;
-
     width:280px;
-
     height:160px;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     background:#fff;
-
     border-radius:18px;
-
-    padding:15px;
-
+    padding:18px;
     border:1px solid #ececec;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.15);
-
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
     transition:.35s;
-
 }
 
 .slider-item:hover{
-
     transform:translateY(-8px);
-
-    box-shadow:
-        0 18px 40px rgba(0,0,0,.22);
-
+    box-shadow:0 18px 40px rgba(0,0,0,.22);
 }
 
 /* ===========================
-   Logo Image
+   Logo Images
 =========================== */
 
 .slider-item img{
-
-    max-width:100%;
-
-    max-height:100%;
-
     width:auto;
-
     height:auto;
-
+    max-width:82%;
+    max-height:72px;
     object-fit:contain;
-
     transition:.35s;
+}
 
+/* Chhapte Chhapte Logo */
+
+.slider-item img.vertical-logo{
+    width:auto;
+    height:110px;
+    max-width:none;
+    max-height:none;
+    object-fit:contain;
 }
 
 .slider-item:hover img{
-
     transform:scale(1.08);
-
 }
 
 /* ===========================
@@ -192,11 +145,8 @@
 =========================== */
 
 .slider-placeholder{
-
     color:#666;
-
     font-weight:600;
-
 }
 
 /* ===========================
@@ -206,15 +156,11 @@
 @keyframes scrollSlider{
 
     from{
-
         transform:translateX(0);
-
     }
 
     to{
-
         transform:translateX(-50%);
-
     }
 
 }
@@ -226,25 +172,26 @@
 @media(max-width:992px){
 
 .brand-title{
-
-font-size:2.4rem;
-
+    font-size:2.4rem;
 }
 
 .brand-description{
-
-font-size:1rem;
-
+    font-size:1rem;
 }
 
 .slider-item{
+    width:230px;
+    height:130px;
+    padding:14px;
+}
 
-width:230px;
+.slider-item img{
+    max-width:80%;
+    max-height:58px;
+}
 
-height:130px;
-
-padding:12px;
-
+.slider-item img.vertical-logo{
+    height:82px;
 }
 
 }
@@ -256,44 +203,39 @@ padding:12px;
 @media(max-width:768px){
 
 .brand-section{
-
-padding:4rem 1rem;
-
+    padding:4rem 1rem;
 }
 
 .brand-title{
-
-font-size:2rem;
-
+    font-size:2rem;
 }
 
 .brand-description{
-
-font-size:.95rem;
-
+    font-size:.95rem;
 }
 
 .slider-track{
-
-gap:18px;
-
+    gap:18px;
 }
 
 .slider-item{
+    width:170px;
+    height:95px;
+    padding:10px;
+}
 
-width:180px;
+.slider-item img{
+    max-width:80%;
+    max-height:45px;
+}
 
-height:100px;
-
-padding:10px;
-
+.slider-item img.vertical-logo{
+    height:68px;
 }
 
 .slider-wrapper::before,
 .slider-wrapper::after{
-
-width:60px;
-
+    width:60px;
 }
 
 }
@@ -305,19 +247,22 @@ width:60px;
 @media(max-width:480px){
 
 .brand-title{
-
-font-size:1.7rem;
-
+    font-size:1.7rem;
 }
 
 .slider-item{
+    width:150px;
+    height:82px;
+    padding:8px;
+}
 
-width:150px;
+.slider-item img{
+    max-width:80%;
+    max-height:38px;
+}
 
-height:80px;
-
-padding:8px;
-
+.slider-item img.vertical-logo{
+    height:58px;
 }
 
 }

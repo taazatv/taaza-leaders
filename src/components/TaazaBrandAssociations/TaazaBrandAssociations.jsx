@@ -8,18 +8,58 @@ import c4 from '../../assets/c4.png';
 import c5 from '../../assets/c5.png';
 
 const brands = [
-  { name: "Taaza Tv", logo: c1 },
-  { name: "Chhapte Chhapte", logo: c2 },
-  { name: "Taaza Digital", logo: c3 },
-  { name: "MFX Interactive", logo: c4 },
-  { name: "FileItIndia", logo: c5 },
+  {
+    name: "Taaza Tv",
+    logo: c1,
+    vertical: false,
+  },
+  {
+    name: "Chhapte Chhapte",
+    logo: c2,
+    vertical: true,
+  },
+  {
+    name: "Taaza Digital",
+    logo: c3,
+    vertical: false,
+  },
+  {
+    name: "MFX Interactive",
+    logo: c4,
+    vertical: false,
+  },
+  {
+    name: "FileItIndia",
+    logo: c5,
+    vertical: false,
+  },
 
-  // duplicate for smooth infinite slider
-  { name: "Taaza Tv", logo: c1 },
-  { name: "Chhapte Chhapte", logo: c2 },
-  { name: "Taaza Digital", logo: c3 },
-  { name: "MFX Interactive", logo: c4 },
-  { name: "FileItIndia", logo: c5 },
+  // Duplicate for infinite slider
+  {
+    name: "Taaza Tv",
+    logo: c1,
+    vertical: false,
+  },
+  {
+    name: "Chhapte Chhapte",
+    logo: c2,
+    vertical: true,
+  },
+  {
+    name: "Taaza Digital",
+    logo: c3,
+    vertical: false,
+  },
+  {
+    name: "MFX Interactive",
+    logo: c4,
+    vertical: false,
+  },
+  {
+    name: "FileItIndia",
+    logo: c5,
+    vertical: false,
+  },
 ];
 
 export default function TaazaBrandAssociations() {
@@ -40,7 +80,13 @@ export default function TaazaBrandAssociations() {
 
             {brands.map((brand, index) => (
               <div className="slider-item" key={index}>
-                <img src={brand.logo} alt={brand.name} />
+                <img
+                  src={brand.logo}
+                  alt={brand.name}
+                  loading="lazy"
+                  draggable="false"
+                  className={brand.vertical ? "vertical-logo" : ""}
+                />
               </div>
             ))}
 
